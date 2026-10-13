@@ -185,6 +185,142 @@ body {
 </style>
 </head>
 
+<body>
+
+<nav class="day-nav-shell" id="dayNav">
+  <div class="nav-brand">NZ × <span>SG</span></div>
+  <span class="nav-chip" data-target="hero">主页</span>
+  <div class="nav-sep"></div>
+  <span class="nav-chip" data-target="tips">Tips</span>
+  <span class="nav-chip" data-target="driving">自驾</span>
+  <span class="nav-chip" data-target="visa">签证</span>
+  <span class="nav-chip" data-target="flights">航班</span>
+  <span class="nav-chip" data-target="costref">花销</span>
+  <div class="nav-sep"></div>
+  <span id="dayChips"></span>
+  <div class="nav-sep"></div>
+  <span class="nav-chip" data-target="gear">穿搭</span>
+</nav>
+
+<section class="hero" id="hero">
+  <svg class="hero-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none">
+    <path d="M0,400 L0,280 L120,200 L250,260 L380,120 L480,180 L600,80 L720,200 L850,140 L980,220 L1100,100 L1220,180 L1340,120 L1440,200 L1440,400 Z" fill="rgba(255,255,255,0.1)"/>
+    <path d="M0,400 L0,320 L100,260 L220,300 L340,200 L460,260 L580,180 L700,280 L820,220 L940,300 L1060,200 L1180,260 L1300,220 L1440,280 L1440,400 Z" fill="rgba(255,255,255,0.06)"/>
+  </svg>
+  <div class="hero-content">
+    <div class="hero-eyebrow reveal">A Road Trip Memoir</div>
+    <h1 class="hero-title reveal">森与冰川之间<br><span class="accent">新西兰 × 新加坡</span></h1>
+    <p class="hero-lead reveal">11 天自驾之旅 · 南岛冰川湖泊 · 北岛地热奇观 · 狮城转机漫步</p>
+    <div class="hero-meta reveal">
+      <div class="hero-stat"><div class="hero-stat-num">11</div><div class="hero-stat-label">Days</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">2</div><div class="hero-stat-label">Islands</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">8+</div><div class="hero-stat-label">Lakes</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">Countries</div></div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">SCROLL ↓</div>
+</section>
+
+<section class="section"><div class="section-inner">
+  <div class="section-eyebrow reveal">行程概览</div>
+  <h2 class="section-title reveal">三段旅程，一种节奏</h2>
+  <div class="overview-grid">
+    <div class="overview-card dark reveal"><div class="overview-card-title">南岛 · 7天</div><div class="overview-card-text">基督城取车 → 蒂卡波观星 → 库克山冰川徒步 → 瓦纳卡 → 蒂阿瑙萤火虫 → 米尔福德峡湾 → 皇后镇 → 格林诺奇魔戒之路</div></div>
+    <div class="overview-card warm reveal"><div class="overview-card-title">北岛 · 2天</div><div class="overview-card-text">奥克兰取车 → 罗托鲁瓦地热公园（Wai-O-Tapu 香槟池） → 胡卡瀑布 → 霍比特人村 → 奥克兰还车赶机</div></div>
+    <div class="overview-card cream reveal"><div class="overview-card-title">新加坡 · 2次转机</div><div class="overview-card-text">去程：樟宜机场 Jewel 星耀瀑布（5.5h 转机）<br>回程：金沙观景台 → 鱼尾狮 → 小印度 → 牛车水 → 滨海湾</div></div>
+  </div>
+</div></section>
+
+<section class="section info-page" id="tips"><div class="section-inner">
+  <div class="section-eyebrow reveal">TRAVEL TIPS</div>
+  <h2 class="section-title reveal">行程备忘</h2>
+  <div class="info-tile edit-section reveal" style="padding:2rem">
+    <textarea class="edit-box" id="tipsTextarea" style="min-height:300px" placeholder="在这里写下你的行程备忘、注意事项、经验提醒……"></textarea>
+    <div style="font-size:0.72rem;color:var(--ink-soft);margin-top:0.6rem;text-align:right;opacity:0.6">内容自动保存</div>
+  </div>
+</div></section>
+
+<section class="section info-page info-page-alt" id="driving"><div class="section-inner">
+  <div class="section-eyebrow reveal">SELF-DRIVING</div>
+  <h2 class="section-title reveal">自驾路线与驾驶须知</h2>
+  <div class="info-tile reveal" style="overflow-x:auto;margin-bottom:1.5rem">
+    <table style="width:100%;border-collapse:collapse;min-width:600px">
+      <thead><tr style="background:var(--forest-900);color:var(--paper)">
+        <th style="padding:0.7rem 1rem;font-size:0.78rem;text-align:left;border-radius:12px 0 0 0">日期</th>
+        <th style="padding:0.7rem 1rem;font-size:0.78rem;text-align:left">路段</th>
+        <th style="padding:0.7rem 1rem;font-size:0.78rem;text-align:left">里程</th>
+        <th style="padding:0.7rem 1rem;font-size:0.78rem;text-align:left">耗时</th>
+        <th style="padding:0.7rem 1rem;font-size:0.78rem;text-align:left;border-radius:0 12px 0 0">途经</th>
+      </tr></thead>
+      <tbody id="routeTable"></tbody>
+    </table>
+  </div>
+  <div class="overview-grid" id="drivingTipsGrid"></div>
+  <div id="rentalSections"></div>
+</div></section>
+
+<section class="section info-page" id="visa"><div class="section-inner">
+  <div class="section-eyebrow reveal">VISA & ENTRY</div>
+  <h2 class="section-title reveal">签证与入境指南</h2>
+  <div class="info-grid-2" id="visaGrid"></div>
+  <div id="visaChecklist"></div>
+</div></section>
+
+<section class="section info-page info-page-alt" id="flights"><div class="section-inner">
+  <div class="section-eyebrow reveal">FLIGHTS</div>
+  <h2 class="section-title reveal">航班信息总览</h2>
+  <div class="flight-list" id="flightList"></div>
+</div></section>
+
+<section class="section info-page" id="costref"><div class="section-inner">
+  <div class="section-eyebrow reveal">COST REFERENCE</div>
+  <h2 class="section-title reveal">花费参考</h2>
+  <div class="cost-grid" id="costSummary"></div>
+  <div id="costDetail"></div>
+  <div id="costPerPerson"></div>
+</div></section>
+
+<section class="section days-section" id="days"><div class="section-inner">
+  <div class="section-eyebrow reveal">DAILY ITINERARY</div>
+  <h2 class="section-title reveal">每日行程</h2>
+  <div id="dayCards"></div>
+</div></section>
+
+<section class="travel-note reveal">
+  <h3>慢慢走，深深看</h3>
+  <p>这不是一份打卡清单，而是一段与家人一起感受世界的时间。<br>愿你在每一片湖、每一座山下，找到属于自己的节奏。</p>
+</section>
+
+<section class="section info-page info-page-alt" id="gear"><div class="section-inner">
+  <div class="section-eyebrow reveal">PACKING GUIDE</div>
+  <h2 class="section-title reveal">穿搭 & 装备指南</h2>
+  <div class="info-tile reveal" style="padding:2rem;margin-bottom:1.5rem">
+    <h3 style="font-family:var(--serif);font-size:1.1rem;color:var(--forest-900);margin-bottom:0.8rem">行前通用建议</h3>
+    <p style="font-size:0.85rem;line-height:1.8;color:var(--ink-soft);margin-bottom:0.4rem"><strong style="color:var(--forest-800)">温度</strong>：南岛约 12-20°C，务必带轻便羽绒服或冲锋衣三合一；北岛约 12-23°C</p>
+    <p style="font-size:0.85rem;line-height:1.8;color:var(--ink-soft);margin-bottom:0.4rem"><strong style="color:var(--forest-800)">防晒</strong>：紫外线极强，遮阳帽/渔夫帽 + 墨镜 + 高倍防晒霜</p>
+    <p style="font-size:0.85rem;line-height:1.8;color:var(--ink-soft);margin-bottom:0.8rem"><strong style="color:var(--forest-800)">洋葱式三层</strong>：内层长袖打底 + 中层卫衣/抓绒 + 外层防风防雨外套</p>
+    <div style="display:flex;flex-wrap:wrap;gap:0.4rem" id="gearChecklist"></div>
+  </div>
+  <div class="info-tile reveal" style="overflow-x:auto">
+    <table style="width:100%;border-collapse:collapse;min-width:700px">
+      <thead><tr style="background:var(--forest-900);color:var(--paper)">
+        <th style="padding:0.7rem;font-size:0.72rem;text-align:left;border-radius:12px 0 0 0">日期/行程</th>
+        <th style="padding:0.7rem;font-size:0.72rem;text-align:left">气温</th>
+        <th style="padding:0.7rem;font-size:0.72rem;text-align:left">女生穿搭</th>
+        <th style="padding:0.7rem;font-size:0.72rem;text-align:left">男生穿搭</th>
+        <th style="padding:0.7rem;font-size:0.72rem;text-align:left;border-radius:0 12px 0 0">建议装备</th>
+      </tr></thead>
+      <tbody id="gearTable"></tbody>
+    </table>
+  </div>
+</div></section>
+
+<footer class="footer">
+  <div class="footer-brand">新西兰 × 新加坡 · 11天自驾之旅</div>
+  <div class="footer-text">2026年9月25日 — 10月5日 · 一段与家人共享的旅程</div>
+</footer>
+
+<script>
 const days = [
   {
     id: "day0", label: "D0", date: "9/25 \u5468\u4e94",
@@ -377,144 +513,6 @@ const days = [
   },
 ];
 
-
-</head>
-<body>
-
-<nav class="day-nav-shell" id="dayNav">
-  <div class="nav-brand">NZ × <span>SG</span></div>
-  <span class="nav-chip" data-target="hero">主页</span>
-  <div class="nav-sep"></div>
-  <span class="nav-chip" data-target="tips">Tips</span>
-  <span class="nav-chip" data-target="driving">自驾</span>
-  <span class="nav-chip" data-target="visa">签证</span>
-  <span class="nav-chip" data-target="flights">航班</span>
-  <span class="nav-chip" data-target="costref">花销</span>
-  <div class="nav-sep"></div>
-  <span id="dayChips"></span>
-  <div class="nav-sep"></div>
-  <span class="nav-chip" data-target="gear">穿搭</span>
-</nav>
-
-<section class="hero" id="hero">
-  <svg class="hero-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none">
-    <path d="M0,400 L0,280 L120,200 L250,260 L380,120 L480,180 L600,80 L720,200 L850,140 L980,220 L1100,100 L1220,180 L1340,120 L1440,200 L1440,400 Z" fill="rgba(255,255,255,0.1)"/>
-    <path d="M0,400 L0,320 L100,260 L220,300 L340,200 L460,260 L580,180 L700,280 L820,220 L940,300 L1060,200 L1180,260 L1300,220 L1440,280 L1440,400 Z" fill="rgba(255,255,255,0.06)"/>
-  </svg>
-  <div class="hero-content">
-    <div class="hero-eyebrow reveal">A Road Trip Memoir</div>
-    <h1 class="hero-title reveal">森与冰川之间<br><span class="accent">新西兰 × 新加坡</span></h1>
-    <p class="hero-lead reveal">11 天自驾之旅 · 南岛冰川湖泊 · 北岛地热奇观 · 狮城转机漫步</p>
-    <div class="hero-meta reveal">
-      <div class="hero-stat"><div class="hero-stat-num">11</div><div class="hero-stat-label">Days</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">2</div><div class="hero-stat-label">Islands</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">8+</div><div class="hero-stat-label">Lakes</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">Countries</div></div>
-    </div>
-  </div>
-  <div class="hero-scroll-hint">SCROLL ↓</div>
-</section>
-
-<section class="section"><div class="section-inner">
-  <div class="section-eyebrow reveal">行程概览</div>
-  <h2 class="section-title reveal">三段旅程，一种节奏</h2>
-  <div class="overview-grid">
-    <div class="overview-card dark reveal"><div class="overview-card-title">南岛 · 7天</div><div class="overview-card-text">基督城取车 → 蒂卡波观星 → 库克山冰川徒步 → 瓦纳卡 → 蒂阿瑙萤火虫 → 米尔福德峡湾 → 皇后镇 → 格林诺奇魔戒之路</div></div>
-    <div class="overview-card warm reveal"><div class="overview-card-title">北岛 · 2天</div><div class="overview-card-text">奥克兰取车 → 罗托鲁瓦地热公园（Wai-O-Tapu 香槟池） → 胡卡瀑布 → 霍比特人村 → 奥克兰还车赶机</div></div>
-    <div class="overview-card cream reveal"><div class="overview-card-title">新加坡 · 2次转机</div><div class="overview-card-text">去程：樟宜机场 Jewel 星耀瀑布（5.5h 转机）<br>回程：金沙观景台 → 鱼尾狮 → 小印度 → 牛车水 → 滨海湾</div></div>
-  </div>
-</div></section>
-
-<section class="section info-page" id="tips"><div class="section-inner">
-  <div class="section-eyebrow reveal">TRAVEL TIPS</div>
-  <h2 class="section-title reveal">行程备忘</h2>
-  <div class="info-tile edit-section reveal" style="padding:2rem">
-    <textarea class="edit-box" id="tipsTextarea" style="min-height:300px" placeholder="在这里写下你的行程备忘、注意事项、经验提醒……"></textarea>
-    <div style="font-size:0.72rem;color:var(--ink-soft);margin-top:0.6rem;text-align:right;opacity:0.6">内容自动保存</div>
-  </div>
-</div></section>
-
-<section class="section info-page info-page-alt" id="driving"><div class="section-inner">
-  <div class="section-eyebrow reveal">SELF-DRIVING</div>
-  <h2 class="section-title reveal">自驾路线与驾驶须知</h2>
-  <div class="info-tile reveal" style="overflow-x:auto;margin-bottom:1.5rem">
-    <table style="width:100%;border-collapse:collapse;min-width:600px">
-      <thead><tr style="background:var(--forest-900);color:var(--paper)">
-        <th style="padding:0.7rem 1rem;font-size:0.78rem;text-align:left;border-radius:12px 0 0 0">日期</th>
-        <th style="padding:0.7rem 1rem;font-size:0.78rem;text-align:left">路段</th>
-        <th style="padding:0.7rem 1rem;font-size:0.78rem;text-align:left">里程</th>
-        <th style="padding:0.7rem 1rem;font-size:0.78rem;text-align:left">耗时</th>
-        <th style="padding:0.7rem 1rem;font-size:0.78rem;text-align:left;border-radius:0 12px 0 0">途经</th>
-      </tr></thead>
-      <tbody id="routeTable"></tbody>
-    </table>
-  </div>
-  <div class="overview-grid" id="drivingTipsGrid"></div>
-  <div id="rentalSections"></div>
-</div></section>
-
-<section class="section info-page" id="visa"><div class="section-inner">
-  <div class="section-eyebrow reveal">VISA & ENTRY</div>
-  <h2 class="section-title reveal">签证与入境指南</h2>
-  <div class="info-grid-2" id="visaGrid"></div>
-  <div id="visaChecklist"></div>
-</div></section>
-
-<section class="section info-page info-page-alt" id="flights"><div class="section-inner">
-  <div class="section-eyebrow reveal">FLIGHTS</div>
-  <h2 class="section-title reveal">航班信息总览</h2>
-  <div class="flight-list" id="flightList"></div>
-</div></section>
-
-<section class="section info-page" id="costref"><div class="section-inner">
-  <div class="section-eyebrow reveal">COST REFERENCE</div>
-  <h2 class="section-title reveal">花费参考</h2>
-  <div class="cost-grid" id="costSummary"></div>
-  <div id="costDetail"></div>
-  <div id="costPerPerson"></div>
-</div></section>
-
-<section class="section days-section" id="days"><div class="section-inner">
-  <div class="section-eyebrow reveal">DAILY ITINERARY</div>
-  <h2 class="section-title reveal">每日行程</h2>
-  <div id="dayCards"></div>
-</div></section>
-
-<section class="travel-note reveal">
-  <h3>慢慢走，深深看</h3>
-  <p>这不是一份打卡清单，而是一段与家人一起感受世界的时间。<br>愿你在每一片湖、每一座山下，找到属于自己的节奏。</p>
-</section>
-
-<section class="section info-page info-page-alt" id="gear"><div class="section-inner">
-  <div class="section-eyebrow reveal">PACKING GUIDE</div>
-  <h2 class="section-title reveal">穿搭 & 装备指南</h2>
-  <div class="info-tile reveal" style="padding:2rem;margin-bottom:1.5rem">
-    <h3 style="font-family:var(--serif);font-size:1.1rem;color:var(--forest-900);margin-bottom:0.8rem">行前通用建议</h3>
-    <p style="font-size:0.85rem;line-height:1.8;color:var(--ink-soft);margin-bottom:0.4rem"><strong style="color:var(--forest-800)">温度</strong>：南岛约 12-20°C，务必带轻便羽绒服或冲锋衣三合一；北岛约 12-23°C</p>
-    <p style="font-size:0.85rem;line-height:1.8;color:var(--ink-soft);margin-bottom:0.4rem"><strong style="color:var(--forest-800)">防晒</strong>：紫外线极强，遮阳帽/渔夫帽 + 墨镜 + 高倍防晒霜</p>
-    <p style="font-size:0.85rem;line-height:1.8;color:var(--ink-soft);margin-bottom:0.8rem"><strong style="color:var(--forest-800)">洋葱式三层</strong>：内层长袖打底 + 中层卫衣/抓绒 + 外层防风防雨外套</p>
-    <div style="display:flex;flex-wrap:wrap;gap:0.4rem" id="gearChecklist"></div>
-  </div>
-  <div class="info-tile reveal" style="overflow-x:auto">
-    <table style="width:100%;border-collapse:collapse;min-width:700px">
-      <thead><tr style="background:var(--forest-900);color:var(--paper)">
-        <th style="padding:0.7rem;font-size:0.72rem;text-align:left;border-radius:12px 0 0 0">日期/行程</th>
-        <th style="padding:0.7rem;font-size:0.72rem;text-align:left">气温</th>
-        <th style="padding:0.7rem;font-size:0.72rem;text-align:left">女生穿搭</th>
-        <th style="padding:0.7rem;font-size:0.72rem;text-align:left">男生穿搭</th>
-        <th style="padding:0.7rem;font-size:0.72rem;text-align:left;border-radius:0 12px 0 0">建议装备</th>
-      </tr></thead>
-      <tbody id="gearTable"></tbody>
-    </table>
-  </div>
-</div></section>
-
-<footer class="footer">
-  <div class="footer-brand">新西兰 × 新加坡 · 11天自驾之旅</div>
-  <div class="footer-text">2026年9月25日 — 10月5日 · 一段与家人共享的旅程</div>
-</footer>
-
-<script>
 function buildDayChips(){const c=document.getElementById('dayChips');let h='';for(const d of days)h+=`<span class="nav-chip" data-target="${d.id}">${d.label}</span>`;c.innerHTML=h;}
 function buildDayCards(){const c=document.getElementById('dayCards');c.innerHTML=days.map((day,idx)=>{let s='';for(const sec of day.sections){if(sec.type==='timeline'){let it=sec.items.map((i,x)=>`<div class="timeline-entry"><div class="timeline-time">${i.time}</div><textarea class="edit-box" data-storage-key="${day.id}_tl_${x}" style="min-height:40px">${i.text.split('<strong>').join('').split('</strong>').join('')}</textarea></div>`).join('');s+=`<div class="timeline-list">${it}</div>`;}else if(sec.type==='cards'){let cd=sec.cards.map((c,x)=>`<div class="info-card-item edit-section"><div class="info-card-title">${c.title}</div><textarea class="edit-box" data-storage-key="${day.id}_card_${x}">${c.text}</textarea></div>`).join('');s+=`<div class="info-cards-grid">${cd}</div>`;}else if(sec.type==='lakes'){let tg=sec.tags.map(t=>`<span class="lake-tag">${t}</span>`).join('');s+=`<div class="lake-tags" style="padding:0.5rem 0">${tg}</div>`;}else if(sec.type==='info'){let it=sec.items.map((i,x)=>`<div class="info-card-item edit-section"><div class="info-tile-label">${i.label}</div><textarea class="edit-box" data-storage-key="${day.id}_info_${x}" style="min-height:30px">${i.value}</textarea></div>`).join('');s+=`<div class="info-cards-grid">${it}</div>`;}else if(sec.type==='stay'){s+=`<div class="stay-block edit-section"><div class="stay-label">已预订 · BOOKED</div><div class="stay-name">${sec.name}</div><textarea class="edit-box" data-storage-key="${day.id}_stay" style="min-height:40px;margin-top:0.4rem">${sec.addr}</textarea></div>`;}else if(sec.type==='restaurant'){s+=`<div class="rest-block edit-section"><div class="rest-name">${sec.name}</div><textarea class="edit-box" data-storage-key="${day.id}_rest" style="min-height:40px;margin-top:0.4rem">${sec.info}</textarea></div>`;}}s+=`<div class="photo-section"><div class="photo-upload-area" onclick="document.getElementById('photoInput_${day.id}').click()"><div class="photo-upload-icon">📷</div><p>点击上传旅行照片</p></div><input type="file" id="photoInput_${day.id}" style="display:none" accept="image/*" multiple onchange="handlePhotoUpload('${day.id}',this.files)"><div class="photo-grid" id="photoGrid_${day.id}"></div></div>`;const op=idx===0?'open':'';return `<div class="day-card ${op}" id="${day.id}"><div class="day-card-cover"><div class="day-card-copy"><div class="day-kicker">${day.label} · DAY ${day.id.replace('day','')}</div><h3 class="day-title">${day.title}</h3><div class="day-subtitle">${day.subtitle}</div><div class="day-date">${day.date}</div></div><div class="day-card-image"><div class="day-card-image-bg" style="background:${day.bg}"></div><div class="day-card-image-label">${day.subtitle}</div></div></div><div class="day-action-bar"><button class="day-toggle-btn" onclick="toggleDay('${day.id}')"><span class="day-toggle-icon">${op?'−':'＋'}</span><span class="day-toggle-text">${op?'收起详情':'展开详情'}</span></button><span class="day-pill">${day.date}</span></div><div class="timeline-panel">${s}</div></div>`;}).join('');}
 function toggleDay(id){const c=document.getElementById(id);const i=c.querySelector('.day-toggle-icon');const t=c.querySelector('.day-toggle-text');c.classList.toggle('open');if(c.classList.contains('open')){i.textContent='−';t.textContent='收起详情';}else{i.textContent='＋';t.textContent='展开详情';}}

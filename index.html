@@ -153,16 +153,16 @@ body {
 .info-card-item { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 1.2rem 1.4rem; }
 .info-card-title { font-family: var(--serif); font-size: 0.9rem; font-weight: 600; color: var(--forest-900); margin-bottom: 0.4rem; }
 
-.photo-section { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line-soft); }
-.photo-upload-area { border: 2px dashed var(--line); border-radius: 16px; padding: 1.5rem; text-align: center; cursor: pointer; transition: border-color 0.3s, background 0.3s; background: var(--mist); }
-.photo-upload-area:hover { border-color: var(--forest-700); background: var(--sage); }
-.photo-upload-icon { font-size: 1.6rem; color: var(--moss); }
-.photo-upload-area p { font-size: 0.78rem; color: var(--ink-soft); margin-top: 0.3rem; }
-.photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 0.7rem; margin-top: 1rem; }
-.photo-item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 1; box-shadow: var(--shadow-card); }
-.photo-item img { width: 100%; height: 100%; object-fit: cover; }
-.photo-delete { position: absolute; top: 4px; right: 4px; width: 20px; height: 20px; border-radius: 50%; background: rgba(16,45,36,0.6); color: white; border: none; font-size: 0.65rem; cursor: pointer; opacity: 0; transition: opacity 0.2s; }
-.photo-item:hover .photo-delete { opacity: 1; }
+
+
+
+
+
+
+
+
+
+
 
 .travel-note { background: var(--forest-900); border-radius: var(--radius-card); padding: clamp(40px, 7vw, 72px); text-align: center; margin: 3rem auto; max-width: min(1180px, calc(100% - 48px)); }
 .travel-note h3 { font-family: var(--serif); font-size: clamp(24px, 3.5vw, 38px); font-weight: 500; color: var(--paper); margin-bottom: 1rem; }
@@ -628,9 +628,7 @@ function setupReveal(){var o=new IntersectionObserver(function(e){e.forEach(func
 function initEditable(){document.querySelectorAll('[data-storage-key]').forEach(function(t){var k=t.dataset.storageKey;var s=localStorage.getItem('nz_edit_'+k);if(s!==null)t.value=s;t.addEventListener('input',function(){localStorage.setItem('nz_edit_'+k,t.value);});});}
 function initTips(){var t=document.getElementById('tipsTextarea');if(!t)return;var s=localStorage.getItem('nz_travel_tips');if(s)t.value=s;t.addEventListener('input',function(){localStorage.setItem('nz_travel_tips',t.value);});}
 
-function loadPhotos(dayId){var g=document.getElementById('photoGrid_'+dayId);if(!g)return;var s=localStorage.getItem('nz_photos_'+dayId);if(!s)return;try{var p=JSON.parse(s);g.innerHTML=p.map(function(d,i){return '<div class="photo-item"><img src="'+d+'" alt="photo '+(i+1)+'"><button class="photo-delete" onclick="deletePhoto(\''+dayId+'\','+i+')">x</button></div>';}).join('');}catch(e){}}
-function handlePhotoUpload(dayId,files){var k='nz_photos_'+dayId;var p=[];try{p=JSON.parse(localStorage.getItem(k)||'[]');}catch(e){}Array.from(files).forEach(function(f){if(f.size>3000000){var r=new FileReader();r.onload=function(e){var img=new Image();img.onload=function(){var c=document.createElement('canvas');var mW=800;var sc=img.width>mW?mW/img.width:1;c.width=img.width*sc;c.height=img.height*sc;c.getContext('2d').drawImage(img,0,0,c.width,c.height);p.push(c.toDataURL('image/jpeg',0.7));localStorage.setItem(k,JSON.stringify(p));loadPhotos(dayId);};img.src=e.target.result;};r.readAsDataURL(f);}else{var r=new FileReader();r.onload=function(e){p.push(e.target.result);localStorage.setItem(k,JSON.stringify(p));loadPhotos(dayId);};r.readAsDataURL(f);}});}
-function deletePhoto(dayId,idx){var k='nz_photos_'+dayId;try{var p=JSON.parse(localStorage.getItem(k)||'[]');p.splice(idx,1);localStorage.setItem(k,JSON.stringify(p));loadPhotos(dayId);}catch(e){}}
+
 function init(){buildDayChips();buildDayCards();buildRouteTable();buildDrivingTips();buildRentals();buildVisa();buildFlights();buildCost();buildGearTable();buildGearChecklist();setupNav();setupScrollSpy();setupReveal();initEditable();initTips();}
 init();
 </script>

@@ -92,8 +92,8 @@ body {
 .info-tile { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 1.5rem 1.8rem; position: relative; }
 .info-tile-label { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.4rem; }
 
-.edit-box { width: 100%; min-height: 55px; border: 1px solid var(--line-soft); border-radius: 12px; padding: 0.6rem 0.8rem; font-family: var(--sans); font-size: 0.85rem; line-height: 1.75; color: var(--ink-soft); resize: vertical; outline: none; background: rgba(237,242,233,0.4); transition: border-color 0.3s, background 0.3s; }
-.edit-box:focus { border-color: var(--forest-700); background: var(--paper); }
+.edit-box { width: 100%; min-height: 24px; border: 1px solid transparent; border-radius: 6px; padding: 0.2rem 0.4rem; font-family: var(--sans); font-size: 0.78rem; line-height: 1.5; color: var(--ink-soft); resize: none; outline: none; background: transparent; transition: border-color 0.3s, background 0.3s; }
+.edit-box:focus { border-color: var(--forest-700); background: var(--paper); border-radius: 6px; }
 .edit-section { position: relative; }
 .edit-section::after { content: '\270E'; position: absolute; top: 0.3rem; right: 0.5rem; font-size: 0.65rem; color: var(--ink-soft); opacity: 0.4; }
 
@@ -111,13 +111,13 @@ body {
 .cost-tile { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 1.2rem; text-align: center; }
 .cost-tile-label { font-size: 0.72rem; color: var(--ink-soft); margin-top: 0.3rem; }
 
-.day-card { background: var(--paper); border-radius: var(--radius-card); border: 1px solid var(--line); box-shadow: var(--shadow-card); overflow: hidden; margin-bottom: 1rem; scroll-margin-top: 60px; }
-.day-card-cover { display: grid; grid-template-columns: 1.03fr 0.97fr; min-height: 200px; }
-.day-card-copy { padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; justify-content: center; }
-.day-kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--clay); margin-bottom: 0.6rem; }
-.day-title { font-family: var(--serif); font-size: clamp(24px, 3.5vw, 40px); font-weight: 500; letter-spacing: -0.03em; line-height: 1.2; color: var(--ink); margin-bottom: 0.4rem; }
-.day-subtitle { font-family: var(--serif); font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 1rem; }
-.day-date { font-size: 0.82rem; color: var(--ink-soft); font-weight: 500; }
+.day-card { background: var(--paper); border-radius: var(--radius-card); border: 1px solid var(--line); box-shadow: var(--shadow-card); overflow: hidden; margin-bottom: 0.7rem; scroll-margin-top: 60px; }
+.day-card-cover { display: grid; grid-template-columns: 1fr 1fr; min-height: 160px; }
+.day-card-copy { padding: clamp(16px, 2.5vw, 28px); display: flex; flex-direction: column; justify-content: center; }
+.day-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--clay); margin-bottom: 0.3rem; }
+.day-title { font-family: var(--serif); font-size: clamp(18px, 2.5vw, 28px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; color: var(--ink); margin-bottom: 0.2rem; }
+.day-subtitle { font-family: var(--serif); font-size: 0.78rem; color: var(--ink-soft); margin-bottom: 0.3rem; }
+.day-date { font-size: 0.72rem; color: var(--ink-soft); font-weight: 500; }
 .day-card-image { position: relative; overflow: hidden; background: var(--sage); }
 .day-card-image-bg { position: absolute; inset: 0; transition: transform 0.7s ease; }
 .day-card:hover .day-card-image-bg { transform: scale(1.035); }
@@ -129,29 +129,29 @@ body {
 
 
 
-.timeline-panel { padding: 0 clamp(16px, 3vw, 24px) 1rem; }
+.timeline-panel { padding: 0.5rem clamp(12px, 2vw, 20px) 0.8rem; }
 .day-card.open .timeline-panel { display: block; }
 
-.timeline-list { position: relative; padding-left: 54px; }
-.timeline-list::before { content: ''; position: absolute; left: 24px; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
-.timeline-entry { position: relative; margin-bottom: 0.5rem; }
-.timeline-entry::before { content: ''; position: absolute; left: -36px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--moss); border: 2px solid var(--paper); }
-.timeline-time { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; color: var(--forest-700); margin-bottom: 0.15rem; }
-.timeline-text { font-size: 0.88rem; line-height: 1.7; color: var(--ink-soft); }
+.timeline-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem 1.5rem; padding: 0.5rem 0; }
 
-.lake-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.lake-tag { padding: 0.25rem 0.7rem; background: var(--mist); color: var(--forest-800); border-radius: var(--radius-pill); font-size: 0.76rem; font-weight: 500; }
+.timeline-entry { display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.25rem 0; border-bottom: 1px solid var(--line-soft); }
 
-.stay-block { margin-top: 1rem; padding: 1rem 1.2rem; background: var(--mist); border-radius: 16px; }
-.stay-label { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: var(--clay); margin-bottom: 0.3rem; }
-.stay-name { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--forest-900); }
+.timeline-time { font-family: var(--serif); font-size: 0.72rem; font-weight: 600; color: var(--forest-700); background: var(--mist); padding: 0.1rem 0.4rem; border-radius: 6px; white-space: nowrap; flex-shrink: 0; min-width: 60px; text-align: center; }
+.timeline-text { font-size: 0.78rem; line-height: 1.5; color: var(--ink-soft); flex: 1; }
 
-.rest-block { margin-top: 1rem; padding: 0.8rem 1.2rem; background: var(--sand); border-left: 3px solid var(--clay); border-radius: 0 12px 12px 0; }
-.rest-name { font-family: var(--serif); font-size: 0.9rem; font-weight: 600; color: var(--ink); }
+.lake-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.3rem; }
+.lake-tag { padding: 0.15rem 0.5rem; background: var(--mist); color: var(--forest-800); border-radius: var(--radius-pill); font-size: 0.7rem; font-weight: 500; }
 
-.info-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
-.info-card-item { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 1.2rem 1.4rem; }
-.info-card-title { font-family: var(--serif); font-size: 0.9rem; font-weight: 600; color: var(--forest-900); margin-bottom: 0.4rem; }
+.stay-block { margin-top: 0.5rem; padding: 0.4rem 0.7rem; background: var(--mist); border-radius: 8px; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+.stay-label { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; color: var(--clay); text-transform: uppercase; }
+.stay-name { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; color: var(--forest-900); }
+
+.rest-block { margin-top: 0.5rem; padding: 0.4rem 0.7rem; background: var(--sand); border-left: 2px solid var(--clay); border-radius: 0 8px 8px 0; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+.rest-name { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; color: var(--ink); }
+
+.info-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.5rem; margin-top: 0.3rem; }
+.info-card-item { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.5rem 0.7rem; }
+.info-card-title { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; color: var(--forest-900); margin-bottom: 0.2rem; }
 
 
 
@@ -172,7 +172,7 @@ body {
 .footer-brand { font-family: var(--serif); font-size: 1rem; color: rgba(251,248,241,0.5); }
 .footer-text { font-size: 0.78rem; color: rgba(251,248,241,0.3); margin-top: 0.5rem; }
 
-@media (max-width: 880px) {
+@media (max-width: 880px) { .timeline-list { grid-template-columns: 1fr; }
   .overview-grid { grid-template-columns: 1fr; }
   .day-card-cover { grid-template-columns: 1fr; }
   .day-card-image { min-height: 200px; order: -1; }
@@ -612,7 +612,7 @@ const gr=[['Day 0 9/25 新加坡','26-32°C','短袖T恤/连衣裙+薄开衫','�
 ;
 
 function buildDayChips(){const c=document.getElementById('dayChips');let h='';for(const d of days)h+=`<span class="nav-chip" data-target="${d.id}">${d.label}</span>`;c.innerHTML=h;}
-function buildDayCards(){const c=document.getElementById('dayCards');c.innerHTML=days.map((day,idx)=>{let s='';for(const sec of day.sections){if(sec.type==='timeline'){let it=sec.items.map((i,x)=>`<div class="timeline-entry"><div class="timeline-time">${i.time}</div><textarea class="edit-box" data-storage-key="${day.id}_tl_${x}" style="min-height:28px;font-size:0.78rem;line-height:1.5;padding:0.3rem 0.5rem">${i.text.split('<strong>').join('').split('</strong>').join('')}</textarea></div>`).join('');s+=`<div class="timeline-list">${it}</div>`;}else if(sec.type==='cards'){let cd=sec.cards.map((c,x)=>`<div class="info-card-item edit-section"><div class="info-card-title">${c.title}</div><textarea class="edit-box" data-storage-key="${day.id}_card_${x}">${c.text}</textarea></div>`).join('');s+=`<div class="info-cards-grid">${cd}</div>`;}else if(sec.type==='lakes'){let tg=sec.tags.map(t=>`<span class="lake-tag">${t}</span>`).join('');s+=`<div class="lake-tags" style="padding:0.5rem 0">${tg}</div>`;}else if(sec.type==='info'){let it=sec.items.map((i,x)=>`<div class="info-card-item edit-section"><div class="info-tile-label">${i.label}</div><textarea class="edit-box" data-storage-key="${day.id}_info_${x}" style="min-height:30px">${i.value}</textarea></div>`).join('');s+=`<div class="info-cards-grid">${it}</div>`;}else if(sec.type==='stay'){s+=`<div class="stay-block edit-section"><div class="stay-label">已预订 · BOOKED</div><div class="stay-name">${sec.name}</div><textarea class="edit-box" data-storage-key="${day.id}_stay" style="min-height:40px;margin-top:0.4rem">${sec.addr}</textarea></div>`;}else if(sec.type==='restaurant'){s+=`<div class="rest-block edit-section"><div class="rest-name">${sec.name}</div><textarea class="edit-box" data-storage-key="${day.id}_rest" style="min-height:40px;margin-top:0.4rem">${sec.info}</textarea></div>`;}}const op='open';return `<div class="day-card ${op}" id="${day.id}"><div class="day-card-cover"><div class="day-card-copy"><div class="day-kicker">${day.label} · DAY ${day.id.replace('day','')}</div><h3 class="day-title">${day.title}</h3><div class="day-subtitle">${day.subtitle}</div><div class="day-date">${day.date}</div></div><div class="day-card-image"><div class="day-card-image-bg" style="background-image:url('${day.bg}');background-size:cover;background-position:center"></div><div class="day-card-image-label">${day.subtitle}</div></div></div><div class="timeline-panel" style="padding-top:1rem">${s}</div></div>`;}).join('');}
+function buildDayCards(){const c=document.getElementById('dayCards');c.innerHTML=days.map((day,idx)=>{let s='';for(const sec of day.sections){if(sec.type==='timeline'){let it=sec.items.map((i,x)=>`<div class="timeline-entry"><span class="timeline-time">${i.time}</span><span class="timeline-text">${i.text}</span></div>`).join('');s+=`<div class="timeline-list">${it}</div>`;}else if(sec.type==='cards'){let cd=sec.cards.map((c,x)=>`<div class="info-card-item"><div class="info-card-title">${c.title}</div><p style="font-size:0.76rem;line-height:1.5;color:var(--ink-soft);margin-top:0.15rem">${c.text}</p></div>`).join('');s+=`<div class="info-cards-grid">${cd}</div>`;}else if(sec.type==='lakes'){let tg=sec.tags.map(t=>`<span class="lake-tag">${t}</span>`).join('');s+=`<div class="lake-tags" style="padding:0.5rem 0">${tg}</div>`;}else if(sec.type==='info'){let it=sec.items.map((i,x)=>`<div class="info-card-item"><div class="info-tile-label">${i.label}</div><p style="font-size:0.76rem;line-height:1.5;color:var(--ink-soft);margin-top:0.15rem">${i.value}</p></div>`).join('');s+=`<div class="info-cards-grid">${it}</div>`;}else if(sec.type==='stay'){s+=`<div class="stay-block"><div class="stay-label">已预订 · BOOKED</div><div class="stay-name">${sec.name}</div><span style="font-size:0.76rem;color:var(--ink-soft)">${sec.addr}</span></div>`;}else if(sec.type==='restaurant'){s+=`<div class="rest-block"><div class="rest-name">${sec.name}</div><span style="font-size:0.76rem;color:var(--ink-soft)">${sec.info}</span></div>`;}}const op='open';return `<div class="day-card ${op}" id="${day.id}"><div class="day-card-cover"><div class="day-card-copy"><div class="day-kicker">${day.label} · DAY ${day.id.replace('day','')}</div><h3 class="day-title">${day.title}</h3><div class="day-subtitle">${day.subtitle}</div><div class="day-date">${day.date}</div></div><div class="day-card-image"><div class="day-card-image-bg" style="background-image:url('${day.bg}');background-size:cover;background-position:center"></div><div class="day-card-image-label">${day.subtitle}</div></div></div><div class="timeline-panel" style="padding-top:1rem">${s}</div></div>`;}).join('');}
 function buildRouteTable(){document.getElementById('routeTable').innerHTML=routes.map(r=>`<tr style="border-bottom:1px solid var(--line-soft)"><td style="padding:0.6rem 1rem;font-size:0.8rem;font-weight:600;color:var(--forest-900)">${r[0]}</td><td style="padding:0.6rem 1rem;font-size:0.8rem;color:var(--ink-soft)">${r[1]}</td><td style="padding:0.6rem 1rem;font-size:0.8rem;font-family:var(--serif);font-weight:600;color:var(--clay)">${r[2]}</td><td style="padding:0.6rem 1rem;font-size:0.8rem;color:var(--ink-soft)">${r[3]}</td><td style="padding:0.6rem 1rem;font-size:0.8rem;color:var(--ink-soft)">${r[4]}</td></tr>`).join('');}
 function buildDrivingTips(){document.getElementById('drivingTipsGrid').innerHTML=dtips.map(([i,t,k,x])=>`<div class="overview-card cream edit-section" style="padding:1.5rem"><div style="font-size:1.3rem;margin-bottom:0.4rem">${i}</div><h4 style="font-family:var(--serif);font-size:0.95rem;color:var(--forest-900);margin-bottom:0.4rem">${t}</h4><p style="font-size:0.85rem;line-height:1.7;color:var(--ink-soft)">${x}</p></div>`).join('');}
 function buildRentals(){document.getElementById('rentalSections').innerHTML=rentals.map(([t,k,x])=>`<div class="info-tile edit-section" style="margin-bottom:1rem"><h4 style="font-family:var(--serif);font-size:1rem;color:var(--forest-900);margin-bottom:0.5rem">${t}</h4><p style="font-size:0.85rem;line-height:1.8;color:var(--ink-soft);white-space:pre-wrap">${x}</p></div>`).join('');}
